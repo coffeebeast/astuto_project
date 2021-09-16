@@ -1,0 +1,94 @@
+.commentsContainer {
+  .newCommentForm {
+    @extend
+      .d-flex,
+      .my-3;
+
+    .currentUserAvatar {
+      @extend
+        .gravatar,
+        .align-self-end,
+        .mr-2;
+    }
+
+    .newCommentBody {
+      @extend
+        .form-control,
+        .w-100,
+        .p-2,
+        .mr-2;
+
+      height: 80px;
+      
+      border: thin solid grey;
+      border-radius: 4px;
+
+      resize: none;
+    }
+
+    .submitCommentButton {
+      @extend
+        .align-self-end;
+
+      height: 40px;
+    }
+  }
+
+  .commentsTitle {
+    @extend
+      .text-secondary,
+      .text-uppercase,
+      .font-weight-lighter,
+      .my-2;
+  }
+
+  .commentList > .commentList {
+    padding-left: 32px;
+  }
+
+  .comment {
+    @extend
+      .my-3;
+
+    .commentHeader {
+      @extend .titleText;
+
+      .commentAuthor {
+        @extend .ml-2;
+
+        vertical-align: middle;
+      }
+
+      .postUpdateBadge {
+        @extend
+          .badge,
+          .badgeLight,
+          .ml-2;
+      }
+    }
+
+    .commentBody {
+      @extend .my-1;
+    }
+
+    .commentFooter {
+      font-size: 14px;
+
+      .commentLink {
+        color: $astuto-black;
+
+        &:hover {
+          text-decoration: underline;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .commentList .comment .commentFooter .commentLink {
+    color: white;
+  }
+
+}

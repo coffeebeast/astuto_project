@@ -1,0 +1,57 @@
+/*
+  This stylesheet contains styles that are general and
+  could not be grouped in a file of their own
+*/
+
+.container {
+  max-width: 920px;
+}
+
+.turbolinks-progress-bar {
+  background-color: $astuto-black;
+  height: 2px;
+}
+
+.gravatar {
+  border-radius: 100%;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 4px;
+}
+
+.loginInfo {
+  text-decoration: underline;
+}
+
+.btn {
+  color: #fff;
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: #242424;
+  }
+
+  .container, h2 {
+    color: white;
+  }
+
+  .loginInfo {
+    color: white;
+  }
+
+  .btn {
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+  }
+}

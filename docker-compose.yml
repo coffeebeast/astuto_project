@@ -1,0 +1,29 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    environment:
+      - UPDATE=0
+      - ENVIRONMENT
+      - SECRET_KEY_BASE
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+      - EMAIL_CONFIRMATION
+      - APP_NAME
+      - SHOW_LOGO
+      - POSTS_PER_PAGE
+    volumes:
+      - .:/astuto
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db

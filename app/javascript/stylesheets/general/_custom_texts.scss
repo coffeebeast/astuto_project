@@ -1,0 +1,45 @@
+/*
+  This styles apply to custom texts defined in  
+  /app/javascript/components/shared/CustomTexts.tsx
+*/
+
+.titleText {
+  @extend
+   .font-weight-bolder;
+}
+
+.centeredText {
+  @extend
+    .text-center,
+    .p-2;
+}
+
+.mutedText {
+  color: $muted-text-color;
+}
+
+.uppercaseText {
+  @extend
+    .text-secondary,
+    .text-uppercase,
+    .font-weight-light;
+  
+    font-size: 13px;
+}
+
+.successText {
+  @extend
+    .text-success,
+    .text-center;
+}
+
+.dangerText {
+  @extend
+    .text-danger,
+    .text-center;
+}
+
+.descriptionText {
+  @extend
+    .text-muted;
+}

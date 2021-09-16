@@ -1,0 +1,20 @@
+name: Inspec Compliance as Code
+
+# Controls when the workflow will run
+on:
+  workflow_dispatch:
+
+jobs:
+  inspec:
+    runs-on: self-hosted
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v2
+      - name: Check if inspec exists
+        run: which inspec
+      - name: Accept the license
+        run: inspec --chef-license=accept
+        working-directory: /opt/inspec
+      - name: Run inspec on the server.
+        run: inspec exec $GITHUB_WORKSPACE/inspec_tests.rb -t ssh://${{secrets.TEST_WEB_SERVER_USER}}@${{secrets.TEST_WEB_SERVER}} -i /tmp/inspec_key
+        working-directory: /opt/inspec
